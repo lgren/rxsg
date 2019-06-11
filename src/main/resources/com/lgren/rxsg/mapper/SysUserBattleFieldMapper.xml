@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.SysUserBattleFieldMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.SysUserBattleField">
+        <id column="id" property="id" />
+        <result column="bid" property="bid" />
+        <result column="createuid" property="createuid" />
+        <result column="level" property="level" />
+        <result column="maxpeople" property="maxpeople" />
+        <result column="state" property="state" />
+        <result column="starttime" property="starttime" />
+        <result column="endtime" property="endtime" />
+        <result column="finishtime" property="finishtime" />
+        <result column="type" property="type" />
+        <result column="minpeople" property="minpeople" />
+        <result column="winner" property="winner" />
+        <result column="progress" property="progress" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, bid, createuid, level, maxpeople, state, starttime, endtime, finishtime, type, minpeople, winner, progress
+    </sql>
+
+</mapper>

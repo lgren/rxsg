@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.CfgTroopTacticsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.CfgTroopTactics">
+        <id column="stype" property="stype" />
+        <result column="plunder_action" property="plunderAction" />
+        <result column="plunder_target" property="plunderTarget" />
+        <result column="invade_action" property="invadeAction" />
+        <result column="invade_target" property="invadeTarget" />
+        <result column="invade_action2" property="invadeAction2" />
+        <result column="invade_target2" property="invadeTarget2" />
+        <result column="patrol_action" property="patrolAction" />
+        <result column="field_action" property="fieldAction" />
+        <result column="field_target" property="fieldTarget" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        stype, plunder_action, plunder_target, invade_action, invade_target, invade_action2, invade_target2, patrol_action, field_action, field_target
+    </sql>
+
+</mapper>

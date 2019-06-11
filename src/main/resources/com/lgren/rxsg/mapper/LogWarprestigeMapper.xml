@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.LogWarprestigeMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.LogWarprestige">
+        <result column="attackuid" property="attackuid" />
+        <result column="resistuid" property="resistuid" />
+        <result column="attackdie" property="attackdie" />
+        <result column="resistdie" property="resistdie" />
+        <result column="prestigeadd" property="prestigeadd" />
+        <result column="time" property="time" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        attackuid, resistuid, attackdie, resistdie, prestigeadd, time
+    </sql>
+
+</mapper>

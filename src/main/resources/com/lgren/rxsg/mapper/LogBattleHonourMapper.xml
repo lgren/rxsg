@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.LogBattleHonourMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.LogBattleHonour">
+        <id column="uid" property="uid" />
+        <result column="battlefieldid" property="battlefieldid" />
+        <result column="honour" property="honour" />
+        <result column="starttime" property="starttime" />
+        <result column="battleid" property="battleid" />
+        <result column="finishtime" property="finishtime" />
+        <result column="result" property="result" />
+        <result column="quittime" property="quittime" />
+        <result column="metal" property="metal" />
+        <result column="unionid" property="unionid" />
+        <result column="level" property="level" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        uid, battlefieldid, honour, starttime, battleid, finishtime, result, quittime, metal, unionid, level
+    </sql>
+
+</mapper>

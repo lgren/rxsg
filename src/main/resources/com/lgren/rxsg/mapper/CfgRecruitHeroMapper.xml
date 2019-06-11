@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.CfgRecruitHeroMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.CfgRecruitHero">
+        <id column="id" property="id" />
+        <result column="actid" property="actid" />
+        <result column="heroname" property="heroname" />
+        <result column="herotype" property="herotype" />
+        <result column="min_face" property="minFace" />
+        <result column="max_face" property="maxFace" />
+        <result column="min_affairs_base" property="minAffairsBase" />
+        <result column="max_affairs_base" property="maxAffairsBase" />
+        <result column="min_bravery_base" property="minBraveryBase" />
+        <result column="max_bravery_base" property="maxBraveryBase" />
+        <result column="min_wisdom_base" property="minWisdomBase" />
+        <result column="max_wisdom_base" property="maxWisdomBase" />
+        <result column="min_loyalty" property="minLoyalty" />
+        <result column="max_loyalty" property="maxLoyalty" />
+        <result column="rate" property="rate" />
+        <result column="sex" property="sex" />
+        <result column="userhavecnt" property="userhavecnt" />
+        <result column="gentype" property="gentype" />
+        <result column="genid" property="genid" />
+        <result column="level" property="level" />
+        <result column="min_level" property="minLevel" />
+        <result column="max_level" property="maxLevel" />
+        <result column="min_command_base" property="minCommandBase" />
+        <result column="max_command_base" property="maxCommandBase" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, actid, heroname, herotype, min_face, max_face, min_affairs_base, max_affairs_base, min_bravery_base, max_bravery_base, min_wisdom_base, max_wisdom_base, min_loyalty, max_loyalty, rate, sex, userhavecnt, gentype, genid, level, min_level, max_level, min_command_base, max_command_base
+    </sql>
+
+</mapper>

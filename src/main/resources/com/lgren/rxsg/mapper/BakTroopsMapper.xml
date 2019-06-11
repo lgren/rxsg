@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.BakTroopsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.BakTroops">
+        <id column="id" property="id" />
+        <result column="uid" property="uid" />
+        <result column="cid" property="cid" />
+        <result column="hid" property="hid" />
+        <result column="targetcid" property="targetcid" />
+        <result column="task" property="task" />
+        <result column="state" property="state" />
+        <result column="starttime" property="starttime" />
+        <result column="pathtime" property="pathtime" />
+        <result column="endtime" property="endtime" />
+        <result column="noback" property="noback" />
+        <result column="soldiers" property="soldiers" />
+        <result column="resource" property="resource" />
+        <result column="battleid" property="battleid" />
+        <result column="people" property="people" />
+        <result column="fooduse" property="fooduse" />
+        <result column="lastrun" property="lastrun" />
+        <result column="lastlock" property="lastlock" />
+        <result column="lastTempt" property="lastTempt" />
+        <result column="lastacc" property="lastacc" />
+        <result column="battlefieldid" property="battlefieldid" />
+        <result column="startcid" property="startcid" />
+        <result column="battleunionid" property="battleunionid" />
+        <result column="targettroopid" property="targettroopid" />
+        <result column="drop" property="drop" />
+        <result column="rate" property="rate" />
+        <result column="bid" property="bid" />
+        <result column="arrive_time" property="arriveTime" />
+        <result column="ulimit" property="ulimit" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, uid, cid, hid, targetcid, task, state, starttime, pathtime, endtime, noback, soldiers, resource, battleid, people, fooduse, lastrun, lastlock, lastTempt, lastacc, battlefieldid, startcid, battleunionid, targettroopid, drop, rate, bid, arrive_time, ulimit
+    </sql>
+
+</mapper>

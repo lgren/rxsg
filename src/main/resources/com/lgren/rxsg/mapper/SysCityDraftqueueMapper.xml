@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.SysCityDraftqueueMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.SysCityDraftqueue">
+        <id column="id" property="id" />
+        <result column="cid" property="cid" />
+        <result column="xy" property="xy" />
+        <result column="sid" property="sid" />
+        <result column="count" property="count" />
+        <result column="queuetime" property="queuetime" />
+        <result column="state" property="state" />
+        <result column="draft_interval" property="draftInterval" />
+        <result column="state_starttime" property="stateStarttime" />
+        <result column="needtime" property="needtime" />
+        <result column="accmark" property="accmark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, cid, xy, sid, count, queuetime, state, draft_interval, state_starttime, needtime, accmark
+    </sql>
+
+</mapper>

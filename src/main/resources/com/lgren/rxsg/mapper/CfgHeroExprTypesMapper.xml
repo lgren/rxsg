@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.CfgHeroExprTypesMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.CfgHeroExprTypes">
+        <result column="type" property="type" />
+        <result column="name" property="name" />
+        <result column="intro" property="intro" />
+        <result column="descs" property="descs" />
+        <result column="min_hour" property="minHour" />
+        <result column="max_hour" property="maxHour" />
+        <result column="min_carraymoney" property="minCarraymoney" />
+        <result column="max_carraymoney" property="maxCarraymoney" />
+        <result column="hour_gold" property="hourGold" />
+        <result column="hour_expr" property="hourExpr" />
+        <result column="hour_money" property="hourMoney" />
+        <result column="rate" property="rate" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        type, name, intro, descs, min_hour, max_hour, min_carraymoney, max_carraymoney, hour_gold, hour_expr, hour_money, rate
+    </sql>
+
+</mapper>

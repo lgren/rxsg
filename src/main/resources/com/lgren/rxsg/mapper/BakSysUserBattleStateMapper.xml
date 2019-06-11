@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.BakSysUserBattleStateMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.BakSysUserBattleState">
+        <id column="uid" property="uid" />
+        <result column="battlefieldid" property="battlefieldid" />
+        <result column="bid" property="bid" />
+        <result column="unionid" property="unionid" />
+        <result column="startcid" property="startcid" />
+        <result column="level" property="level" />
+        <result column="jointime" property="jointime" />
+        <result column="sent_troop_count" property="sentTroopCount" />
+        <result column="state" property="state" />
+        <result column="attack_win_score" property="attackWinScore" />
+        <result column="finish_task_score" property="finishTaskScore" />
+        <result column="kill_enemy_no" property="killEnemyNo" />
+        <result column="be_killed_no" property="beKilledNo" />
+        <result column="quittime" property="quittime" />
+        <result column="iswinner" property="iswinner" />
+        <result column="gained_score" property="gainedScore" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        uid, battlefieldid, bid, unionid, startcid, level, jointime, sent_troop_count, state, attack_win_score, finish_task_score, kill_enemy_no, be_killed_no, quittime, iswinner, gained_score
+    </sql>
+
+</mapper>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.SysUserDonateMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.SysUserDonate">
+        <id column="uid" property="uid" />
+        <result column="unionid" property="unionid" />
+        <result column="donate" property="donate" />
+        <result column="curnum" property="curnum" />
+        <result column="duihuan" property="duihuan" />
+        <result column="time" property="time" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        uid, unionid, donate, curnum, duihuan, time
+    </sql>
+
+</mapper>

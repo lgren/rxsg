@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.MemCityDraftMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.MemCityDraft">
+        <id column="id" property="id" />
+        <result column="cid" property="cid" />
+        <result column="xy" property="xy" />
+        <result column="sid" property="sid" />
+        <result column="count" property="count" />
+        <result column="state_endtime" property="stateEndtime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, cid, xy, sid, count, state_endtime
+    </sql>
+
+</mapper>

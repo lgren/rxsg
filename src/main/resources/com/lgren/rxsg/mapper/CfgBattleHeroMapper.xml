@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.CfgBattleHeroMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.CfgBattleHero">
+        <id column="hid" property="hid" />
+        <result column="bid" property="bid" />
+        <result column="name" property="name" />
+        <result column="sex" property="sex" />
+        <result column="face" property="face" />
+        <result column="level" property="level" />
+        <result column="command" property="command" />
+        <result column="affairs" property="affairs" />
+        <result column="bravery" property="bravery" />
+        <result column="wisdom" property="wisdom" />
+        <result column="energy" property="energy" />
+        <result column="force" property="force" />
+        <result column="rangeadd" property="rangeadd" />
+        <result column="speedadd" property="speedadd" />
+        <result column="armor_drop_type" property="armorDropType" />
+        <result column="can_chat" property="canChat" />
+        <result column="no_attack" property="noAttack" />
+        <result column="npc_hero_id" property="npcHeroId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        bid, name, sex, face, level, command, affairs, bravery, wisdom, hid, energy, force, rangeadd, speedadd, armor_drop_type, can_chat, no_attack, npc_hero_id
+    </sql>
+
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.CfgPkFirstMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.CfgPkFirst">
+        <id column="battleid" property="battleid" />
+        <result column="rankid" property="rankid" />
+        <result column="type" property="type" />
+        <result column="reward" property="reward" />
+        <result column="uid" property="uid" />
+        <result column="passtime" property="passtime" />
+        <result column="time" property="time" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        battleid, rankid, type, reward, uid, passtime, time
+    </sql>
+
+</mapper>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.SysMailBoxMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.SysMailBox">
+        <id column="mid" property="mid" />
+        <result column="uid" property="uid" />
+        <result column="name" property="name" />
+        <result column="fromuid" property="fromuid" />
+        <result column="fromname" property="fromname" />
+        <result column="title" property="title" />
+        <result column="contentid" property="contentid" />
+        <result column="read" property="read" />
+        <result column="recvstate" property="recvstate" />
+        <result column="sendstate" property="sendstate" />
+        <result column="posttime" property="posttime" />
+        <result column="type" property="type" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        mid, uid, name, fromuid, fromname, title, contentid, read, recvstate, sendstate, posttime, type
+    </sql>
+
+</mapper>

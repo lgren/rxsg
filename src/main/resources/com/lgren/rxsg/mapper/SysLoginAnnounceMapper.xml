@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.SysLoginAnnounceMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.SysLoginAnnounce">
+        <id column="id" property="id" />
+        <result column="maxname" property="maxname" />
+        <result column="maxpos" property="maxpos" />
+        <result column="maxnob" property="maxnob" />
+        <result column="maxattack" property="maxattack" />
+        <result column="maxdefence" property="maxdefence" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        maxname, maxpos, maxnob, maxattack, maxdefence, id
+    </sql>
+
+</mapper>

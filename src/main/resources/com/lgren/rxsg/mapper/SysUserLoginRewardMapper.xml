@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.SysUserLoginRewardMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.SysUserLoginReward">
+        <id column="id" property="id" />
+        <result column="uid" property="uid" />
+        <result column="rewardtype" property="rewardtype" />
+        <result column="date" property="date" />
+        <result column="time" property="time" />
+        <result column="gettime" property="gettime" />
+        <result column="boxdetail_id" property="boxdetailId" />
+        <result column="goal_id" property="goalId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, uid, rewardtype, date, time, gettime, boxdetail_id, goal_id
+    </sql>
+
+</mapper>

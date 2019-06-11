@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.CfgShopMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.CfgShop">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="gid" property="gid" />
+        <result column="pack" property="pack" />
+        <result column="price" property="price" />
+        <result column="oriprice" property="oriprice" />
+        <result column="onsale" property="onsale" />
+        <result column="totalCount" property="totalCount" />
+        <result column="userbuycnt" property="userbuycnt" />
+        <result column="daybuycnt" property="daybuycnt" />
+        <result column="position" property="position" />
+        <result column="group" property="group" />
+        <result column="rebate" property="rebate" />
+        <result column="commend" property="commend" />
+        <result column="hot" property="hot" />
+        <result column="starttime" property="starttime" />
+        <result column="endtime" property="endtime" />
+        <result column="image" property="image" />
+        <result column="description" property="description" />
+        <result column="battleshop" property="battleshop" />
+        <result column="creditPrice" property="creditPrice" />
+        <result column="medalPrice" property="medalPrice" />
+        <result column="medalTypeId" property="medalTypeId" />
+        <result column="battleGoodsType" property="battleGoodsType" />
+        <result column="battledaybuycnt" property="battledaybuycnt" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, gid, pack, price, oriprice, onsale, totalCount, userbuycnt, daybuycnt, position, group, rebate, commend, hot, starttime, endtime, image, description, battleshop, creditPrice, medalPrice, medalTypeId, battleGoodsType, battledaybuycnt
+    </sql>
+
+</mapper>

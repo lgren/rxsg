@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.LogMerchantMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.LogMerchant">
+        <id column="id" property="id" />
+        <result column="uid" property="uid" />
+        <result column="time" property="time" />
+        <result column="wood" property="wood" />
+        <result column="food" property="food" />
+        <result column="iron" property="iron" />
+        <result column="rock" property="rock" />
+        <result column="gold" property="gold" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, uid, time, wood, food, iron, rock, gold
+    </sql>
+
+</mapper>

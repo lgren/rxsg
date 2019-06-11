@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.CfgActTaskGoodDropMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.CfgActTaskGoodDrop">
+        <id column="id" property="id" />
+        <result column="actiontype" property="actiontype" />
+        <result column="actid" property="actid" />
+        <result column="sort" property="sort" />
+        <result column="type" property="type" />
+        <result column="count" property="count" />
+        <result column="name" property="name" />
+        <result column="rate" property="rate" />
+        <result column="param" property="param" />
+        <result column="starttime" property="starttime" />
+        <result column="endtime" property="endtime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, actiontype, actid, sort, type, count, name, rate, param, starttime, endtime
+    </sql>
+
+</mapper>

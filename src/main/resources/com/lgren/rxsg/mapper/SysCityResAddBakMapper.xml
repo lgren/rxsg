@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.SysCityResAddBakMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.SysCityResAddBak">
+        <id column="cid" property="cid" />
+        <result column="food_rate" property="foodRate" />
+        <result column="wood_rate" property="woodRate" />
+        <result column="rock_rate" property="rockRate" />
+        <result column="iron_rate" property="ironRate" />
+        <result column="food_store" property="foodStore" />
+        <result column="wood_store" property="woodStore" />
+        <result column="rock_store" property="rockStore" />
+        <result column="iron_store" property="ironStore" />
+        <result column="field_food_add" property="fieldFoodAdd" />
+        <result column="field_wood_add" property="fieldWoodAdd" />
+        <result column="field_rock_add" property="fieldRockAdd" />
+        <result column="field_iron_add" property="fieldIronAdd" />
+        <result column="goods_food_add" property="goodsFoodAdd" />
+        <result column="goods_wood_add" property="goodsWoodAdd" />
+        <result column="goods_rock_add" property="goodsRockAdd" />
+        <result column="goods_iron_add" property="goodsIronAdd" />
+        <result column="chief_add" property="chiefAdd" />
+        <result column="resource_changing" property="resourceChanging" />
+        <result column="skill_food_add" property="skillFoodAdd" />
+        <result column="skill_wood_add" property="skillWoodAdd" />
+        <result column="skill_rock_add" property="skillRockAdd" />
+        <result column="skill_iron_add" property="skillIronAdd" />
+        <result column="skill_gold_add" property="skillGoldAdd" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        cid, food_rate, wood_rate, rock_rate, iron_rate, food_store, wood_store, rock_store, iron_store, field_food_add, field_wood_add, field_rock_add, field_iron_add, goods_food_add, goods_wood_add, goods_rock_add, goods_iron_add, chief_add, resource_changing, skill_food_add, skill_wood_add, skill_rock_add, skill_iron_add, skill_gold_add
+    </sql>
+
+</mapper>

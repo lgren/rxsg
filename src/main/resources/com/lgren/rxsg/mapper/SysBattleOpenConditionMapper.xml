@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.SysBattleOpenConditionMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.SysBattleOpenCondition">
+        <id column="id" property="id" />
+        <result column="battleId" property="battleId" />
+        <result column="dependBattleId" property="dependBattleId" />
+        <result column="otherCondition" property="otherCondition" />
+        <result column="isConditionDoing" property="isConditionDoing" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, battleId, dependBattleId, otherCondition, isConditionDoing
+    </sql>
+
+</mapper>

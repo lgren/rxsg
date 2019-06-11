@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.CfgBoxDetailsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.CfgBoxDetails">
+        <id column="id" property="id" />
+        <result column="srctype" property="srctype" />
+        <result column="srcid" property="srcid" />
+        <result column="sort" property="sort" />
+        <result column="type" property="type" />
+        <result column="count" property="count" />
+        <result column="rate" property="rate" />
+        <result column="inform" property="inform" />
+        <result column="dayopencount" property="dayopencount" />
+        <result column="totalopencount" property="totalopencount" />
+        <result column="owncount" property="owncount" />
+        <result column="name" property="name" />
+        <result column="temp" property="temp" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        srctype, srcid, sort, type, count, rate, inform, dayopencount, totalopencount, owncount, id, name, temp
+    </sql>
+
+</mapper>

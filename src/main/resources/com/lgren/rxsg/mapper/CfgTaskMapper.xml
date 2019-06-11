@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.CfgTaskMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.CfgTask">
+        <id column="id" property="id" />
+        <result column="group" property="group" />
+        <result column="pretid" property="pretid" />
+        <result column="name" property="name" />
+        <result column="content" property="content" />
+        <result column="todo" property="todo" />
+        <result column="default" property="defaultA" />
+        <result column="inform" property="inform" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, group, pretid, name, content, todo, default, inform
+    </sql>
+
+</mapper>

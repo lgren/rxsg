@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.CfgStrongProbabilityMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.CfgStrongProbability">
+        <id column="id" property="id" />
+        <result column="level" property="level" />
+        <result column="suc_value" property="sucValue" />
+        <result column="strong_value" property="strongValue" />
+        <result column="zero_value" property="zeroValue" />
+        <result column="degrade_value" property="degradeValue" />
+        <result column="intact_value" property="intactValue" />
+        <result column="xilian_rate" property="xilianRate" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, level, suc_value, strong_value, zero_value, degrade_value, intact_value, xilian_rate
+    </sql>
+
+</mapper>

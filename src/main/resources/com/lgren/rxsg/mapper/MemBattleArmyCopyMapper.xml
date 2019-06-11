@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.MemBattleArmyCopyMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.MemBattleArmyCopy">
+        <id column="id" property="id" />
+        <result column="uid" property="uid" />
+        <result column="tid" property="tid" />
+        <result column="cid" property="cid" />
+        <result column="sid" property="sid" />
+        <result column="count" property="count" />
+        <result column="sidname" property="sidname" />
+        <result column="people_need" property="peopleNeed" />
+        <result column="type" property="type" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, uid, tid, cid, sid, count, sidname, people_need, type
+    </sql>
+
+</mapper>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.SysReportMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.SysReport">
+        <id column="id" property="id" />
+        <result column="uid" property="uid" />
+        <result column="origincid" property="origincid" />
+        <result column="origincity" property="origincity" />
+        <result column="happencid" property="happencid" />
+        <result column="happencity" property="happencity" />
+        <result column="title" property="title" />
+        <result column="type" property="type" />
+        <result column="time" property="time" />
+        <result column="read" property="read" />
+        <result column="battleid" property="battleid" />
+        <result column="content" property="content" />
+        <result column="state" property="state" />
+        <result column="from_battlenet" property="fromBattlenet" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, uid, origincid, origincity, happencid, happencity, title, type, time, read, battleid, content, state, from_battlenet
+    </sql>
+
+</mapper>

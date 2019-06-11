@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.RankJuanxianUnionMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.RankJuanxianUnion">
+        <id column="rank" property="rank" />
+        <result column="unionid" property="unionid" />
+        <result column="name" property="name" />
+        <result column="leader" property="leader" />
+        <result column="jungong" property="jungong" />
+        <result column="juanxian" property="juanxian" />
+        <result column="qinwang" property="qinwang" />
+        <result column="gongpin" property="gongpin" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        rank, unionid, name, leader, jungong, juanxian, qinwang, gongpin
+    </sql>
+
+</mapper>

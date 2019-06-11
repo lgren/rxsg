@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.SysUnionMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.SysUnion">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="leader" property="leader" />
+        <result column="creator" property="creator" />
+        <result column="member" property="member" />
+        <result column="rank" property="rank" />
+        <result column="prestige" property="prestige" />
+        <result column="intro" property="intro" />
+        <result column="announcement" property="announcement" />
+        <result column="chieforder" property="chieforder" />
+        <result column="createtime" property="createtime" />
+        <result column="actmoney" property="actmoney" />
+        <result column="sns_flag" property="snsFlag" />
+        <result column="donate" property="donate" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, leader, creator, member, rank, prestige, intro, announcement, chieforder, createtime, actmoney, sns_flag, donate
+    </sql>
+
+</mapper>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.CfgPkHeroMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.CfgPkHero">
+        <id column="hid" property="hid" />
+        <result column="battleid" property="battleid" />
+        <result column="name" property="name" />
+        <result column="flag" property="flag" />
+        <result column="sex" property="sex" />
+        <result column="face" property="face" />
+        <result column="energy" property="energy" />
+        <result column="command_base" property="commandBase" />
+        <result column="affair_base" property="affairBase" />
+        <result column="bravery_base" property="braveryBase" />
+        <result column="wisdom_base" property="wisdomBase" />
+        <result column="speed_base" property="speedBase" />
+        <result column="energy_add" property="energyAdd" />
+        <result column="command_add" property="commandAdd" />
+        <result column="affair_add" property="affairAdd" />
+        <result column="bravery_add" property="braveryAdd" />
+        <result column="wisdom_add" property="wisdomAdd" />
+        <result column="speed_add" property="speedAdd" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        hid, battleid, name, flag, sex, face, energy, command_base, affair_base, bravery_base, wisdom_base, speed_base, energy_add, command_add, affair_add, bravery_add, wisdom_add, speed_add
+    </sql>
+
+</mapper>

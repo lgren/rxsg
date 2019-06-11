@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.SysCityTacticsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.SysCityTactics">
+        <id column="cid" property="cid" />
+        <result column="deplunder_join" property="deplunderJoin" />
+        <result column="deplunder" property="deplunder" />
+        <result column="depatrol_join" property="depatrolJoin" />
+        <result column="depatrol" property="depatrol" />
+        <result column="deinvade_join" property="deinvadeJoin" />
+        <result column="deinvade" property="deinvade" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        cid, deplunder_join, deplunder, depatrol_join, depatrol, deinvade_join, deinvade
+    </sql>
+
+</mapper>

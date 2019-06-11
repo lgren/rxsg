@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.SysScUserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.SysScUser">
+        <id column="id" property="id" />
+        <result column="uid" property="uid" />
+        <result column="point" property="point" />
+        <result column="remain" property="remain" />
+        <result column="win" property="win" />
+        <result column="total_point" property="totalPoint" />
+        <result column="total_win" property="totalWin" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, uid, point, remain, win, total_point, total_win
+    </sql>
+
+</mapper>

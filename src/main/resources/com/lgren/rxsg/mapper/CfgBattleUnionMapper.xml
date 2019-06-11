@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.CfgBattleUnionMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.CfgBattleUnion">
+        <id column="unionid" property="unionid" />
+        <result column="bid" property="bid" />
+        <result column="name" property="name" />
+        <result column="flag" property="flag" />
+        <result column="taskgroup" property="taskgroup" />
+        <result column="init_tasks" property="initTasks" />
+        <result column="metal_gid" property="metalGid" />
+        <result column="taskthing" property="taskthing" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        bid, unionid, name, flag, taskgroup, init_tasks, metal_gid, taskthing
+    </sql>
+
+</mapper>

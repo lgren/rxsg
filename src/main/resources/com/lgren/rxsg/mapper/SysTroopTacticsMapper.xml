@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.SysTroopTacticsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.SysTroopTactics">
+        <id column="troopid" property="troopid" />
+        <result column="plunder" property="plunder" />
+        <result column="invade" property="invade" />
+        <result column="patrol" property="patrol" />
+        <result column="field" property="field" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        troopid, plunder, invade, patrol, field
+    </sql>
+
+</mapper>

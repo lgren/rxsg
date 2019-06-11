@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.CfgAssembleSpecialHeroMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.CfgAssembleSpecialHero">
+        <id column="id" property="id" />
+        <result column="battleid" property="battleid" />
+        <result column="type" property="type" />
+        <result column="rate" property="rate" />
+        <result column="rewardid" property="rewardid" />
+        <result column="rewardcount" property="rewardcount" />
+        <result column="isopen" property="isopen" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, battleid, type, rate, rewardid, rewardcount, isopen
+    </sql>
+
+</mapper>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.AdmShopSaleMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.AdmShopSale">
+        <id column="id" property="id" />
+        <result column="enable" property="enable" />
+        <result column="operate_type" property="operateType" />
+        <result column="operate_sid" property="operateSid" />
+        <result column="start_time" property="startTime" />
+        <result column="end_time" property="endTime" />
+        <result column="campaign_id" property="campaignId" />
+        <result column="description" property="description" />
+        <result column="position" property="position" />
+        <result column="price" property="price" />
+        <result column="rebate" property="rebate" />
+        <result column="commend" property="commend" />
+        <result column="hot" property="hot" />
+        <result column="totalCount" property="totalCount" />
+        <result column="userbuycnt" property="userbuycnt" />
+        <result column="daybuycnt" property="daybuycnt" />
+        <result column="onsale" property="onsale" />
+        <result column="inuse" property="inuse" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, enable, operate_type, operate_sid, start_time, end_time, campaign_id, description, position, price, rebate, commend, hot, totalCount, userbuycnt, daybuycnt, onsale, inuse
+    </sql>
+
+</mapper>

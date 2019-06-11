@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.MemUserScheduleMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.MemUserSchedule">
+        <id column="uid" property="uid" />
+        <result column="last_daily_gift" property="lastDailyGift" />
+        <result column="start_new_protect" property="startNewProtect" />
+        <result column="last_trick_war" property="lastTrickWar" />
+        <result column="today_war_count" property="todayWarCount" />
+        <result column="last_reset_sys_task" property="lastResetSysTask" />
+        <result column="last_persuade" property="lastPersuade" />
+        <result column="last_release_hero" property="lastReleaseHero" />
+        <result column="lastlogingif" property="lastlogingif" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        uid, last_daily_gift, start_new_protect, last_trick_war, today_war_count, last_reset_sys_task, last_persuade, last_release_hero, lastlogingif
+    </sql>
+
+</mapper>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.MemCityResourceBakMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.MemCityResourceBak">
+        <id column="cid" property="cid" />
+        <result column="morale" property="morale" />
+        <result column="morale_stable" property="moraleStable" />
+        <result column="complaint" property="complaint" />
+        <result column="tax" property="tax" />
+        <result column="wood" property="wood" />
+        <result column="wood_add" property="woodAdd" />
+        <result column="wood_max" property="woodMax" />
+        <result column="rock" property="rock" />
+        <result column="rock_add" property="rockAdd" />
+        <result column="rock_max" property="rockMax" />
+        <result column="iron" property="iron" />
+        <result column="iron_add" property="ironAdd" />
+        <result column="iron_max" property="ironMax" />
+        <result column="food" property="food" />
+        <result column="food_add" property="foodAdd" />
+        <result column="food_army_use" property="foodArmyUse" />
+        <result column="food_max" property="foodMax" />
+        <result column="gold" property="gold" />
+        <result column="hero_fee" property="heroFee" />
+        <result column="gold_max" property="goldMax" />
+        <result column="gold_rate" property="goldRate" />
+        <result column="people" property="people" />
+        <result column="people_stable" property="peopleStable" />
+        <result column="people_working" property="peopleWorking" />
+        <result column="people_building" property="peopleBuilding" />
+        <result column="people_max" property="peopleMax" />
+        <result column="chief_loyalty" property="chiefLoyalty" />
+        <result column="changing" property="changing" />
+        <result column="lastupdate" property="lastupdate" />
+        <result column="vacation" property="vacation" />
+        <result column="forbidden" property="forbidden" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        cid, morale, morale_stable, complaint, tax, wood, wood_add, wood_max, rock, rock_add, rock_max, iron, iron_add, iron_max, food, food_add, food_army_use, food_max, gold, hero_fee, gold_max, gold_rate, people, people_stable, people_working, people_building, people_max, chief_loyalty, changing, lastupdate, vacation, forbidden
+    </sql>
+
+</mapper>

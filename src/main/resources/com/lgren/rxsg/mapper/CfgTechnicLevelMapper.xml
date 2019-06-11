@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.CfgTechnicLevelMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.CfgTechnicLevel">
+        <id column="id" property="id" />
+        <result column="tid" property="tid" />
+        <result column="level" property="level" />
+        <result column="upgrade_wood" property="upgradeWood" />
+        <result column="upgrade_rock" property="upgradeRock" />
+        <result column="upgrade_iron" property="upgradeIron" />
+        <result column="upgrade_food" property="upgradeFood" />
+        <result column="upgrade_gold" property="upgradeGold" />
+        <result column="upgrade_people" property="upgradePeople" />
+        <result column="upgrade_time" property="upgradeTime" />
+        <result column="description" property="description" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, tid, level, upgrade_wood, upgrade_rock, upgrade_iron, upgrade_food, upgrade_gold, upgrade_people, upgrade_time, description
+    </sql>
+
+</mapper>

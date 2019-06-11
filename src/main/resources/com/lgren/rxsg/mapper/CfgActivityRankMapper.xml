@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.CfgActivityRankMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.CfgActivityRank">
+        <id column="actid" property="actid" />
+        <result column="starttime" property="starttime" />
+        <result column="endtime" property="endtime" />
+        <result column="reward_endtime" property="rewardEndtime" />
+        <result column="desc" property="desc" />
+        <result column="title" property="title" />
+        <result column="sql" property="sql" />
+        <result column="day_sql" property="daySql" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        actid, starttime, endtime, reward_endtime, desc, title, sql, day_sql
+    </sql>
+
+</mapper>

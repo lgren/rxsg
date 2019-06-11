@@ -1,0 +1,52 @@
+.mt15 {
+    margin-top: 15px !important;
+}
+.mb15 {
+    margin-bottom: 15px !important;
+}
+.mb5 {
+    margin-bottom: 5px !important;
+}
+.ml5 {
+    margin-left: 5px !important;
+}
+.mr5 {
+    margin-right: 5px !important;
+}
+.w150p {
+    width: 150px !important;
+}
+.w100p {
+    width: 100px !important;
+}
+.w50p {
+    width: 50px !important;
+}
+.w50 {
+    width: 50% !important;
+}
+.w100 {
+    width: 100% !important;
+}
+.pl0 {
+    padding-left: 0 !important;
+}
+.btn-blue {
+    border-color: #1E9FFF;
+    background-color: #1E9FFF;
+    color: #fff;
+}
+.btn-blue:hover {
+    opacity: .9;
+    text-decoration: none;
+    color: #fff;
+}
+.btn-blue:active {
+    opacity: .8;
+}
+.btn:active {
+    outline: none !important;
+}
+.btn:focus {
+    outline: none !important;
+}

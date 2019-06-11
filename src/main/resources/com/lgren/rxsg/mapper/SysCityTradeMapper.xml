@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.SysCityTradeMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.SysCityTrade">
+        <id column="id" property="id" />
+        <result column="cid" property="cid" />
+        <result column="state" property="state" />
+        <result column="restype" property="restype" />
+        <result column="count" property="count" />
+        <result column="price" property="price" />
+        <result column="gold" property="gold" />
+        <result column="distance" property="distance" />
+        <result column="endtime" property="endtime" />
+        <result column="buycid" property="buycid" />
+        <result column="unionid" property="unionid" />
+        <result column="limittime" property="limittime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, cid, state, restype, count, price, gold, distance, endtime, buycid, unionid, limittime
+    </sql>
+
+</mapper>

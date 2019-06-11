@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.CfgHeroExprRewardMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.CfgHeroExprReward">
+        <id column="id" property="id" />
+        <result column="type" property="type" />
+        <result column="sort" property="sort" />
+        <result column="details" property="details" />
+        <result column="rate" property="rate" />
+        <result column="inform" property="inform" />
+        <result column="name" property="name" />
+        <result column="minnum" property="minnum" />
+        <result column="maxnum" property="maxnum" />
+        <result column="total" property="total" />
+        <result column="win" property="win" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, type, sort, details, rate, inform, name, minnum, maxnum, total, win
+    </sql>
+
+</mapper>

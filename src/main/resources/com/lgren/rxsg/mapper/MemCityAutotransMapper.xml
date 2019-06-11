@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.MemCityAutotransMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.MemCityAutotrans">
+        <id column="id" property="id" />
+        <result column="fromcid" property="fromcid" />
+        <result column="tocid" property="tocid" />
+        <result column="state" property="state" />
+        <result column="res_type" property="resType" />
+        <result column="count" property="count" />
+        <result column="trans_type" property="transType" />
+        <result column="uid" property="uid" />
+        <result column="start_time" property="startTime" />
+        <result column="distance" property="distance" />
+        <result column="end_time" property="endTime" />
+        <result column="cost_time" property="costTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        fromcid, id, tocid, state, res_type, count, trans_type, uid, start_time, distance, end_time, cost_time
+    </sql>
+
+</mapper>

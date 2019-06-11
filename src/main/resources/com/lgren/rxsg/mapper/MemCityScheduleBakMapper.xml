@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.MemCityScheduleBakMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.MemCityScheduleBak">
+        <id column="cid" property="cid" />
+        <result column="create_time" property="createTime" />
+        <result column="last_govern_time" property="lastGovernTime" />
+        <result column="last_change_name" property="lastChangeName" />
+        <result column="last_levy_resource" property="lastLevyResource" />
+        <result column="last_pacify_people" property="lastPacifyPeople" />
+        <result column="next_good_event" property="nextGoodEvent" />
+        <result column="next_bad_event" property="nextBadEvent" />
+        <result column="last_reset_recruit" property="lastResetRecruit" />
+        <result column="last_reset_rumor" property="lastResetRumor" />
+        <result column="last_change_army" property="lastChangeArmy" />
+        <result column="last_trick_morale" property="lastTrickMorale" />
+        <result column="last_trick_weiweijiuzhao" property="lastTrickWeiweijiuzhao" />
+        <result column="last_trick_chenhuodajie" property="lastTrickChenhuodajie" />
+        <result column="last_trick_maifu" property="lastTrickMaifu" />
+        <result column="last_anming" property="lastAnming" />
+        <result column="govern_count" property="governCount" />
+        <result column="last_adv_move" property="lastAdvMove" />
+        <result column="last_be_govern_time" property="lastBeGovernTime" />
+        <result column="last_trick_fenshaoliangcao" property="lastTrickFenshaoliangcao" />
+        <result column="last_trick_hudichouxin" property="lastTrickHudichouxin" />
+        <result column="last_trick_shangwuchouti" property="lastTrickShangwuchouti" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        cid, create_time, last_govern_time, last_change_name, last_levy_resource, last_pacify_people, next_good_event, next_bad_event, last_reset_recruit, last_reset_rumor, last_change_army, last_trick_morale, last_trick_weiweijiuzhao, last_trick_chenhuodajie, last_trick_maifu, last_anming, govern_count, last_adv_move, last_be_govern_time, last_trick_fenshaoliangcao, last_trick_hudichouxin, last_trick_shangwuchouti
+    </sql>
+
+</mapper>

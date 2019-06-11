@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.CfgBattleEventMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.CfgBattleEvent">
+        <id column="id" property="id" />
+        <result column="triggerid" property="triggerid" />
+        <result column="triggertype" property="triggertype" />
+        <result column="targetid1" property="targetid1" />
+        <result column="unionid" property="unionid" />
+        <result column="targettype" property="targettype" />
+        <result column="bid" property="bid" />
+        <result column="msg" property="msg" />
+        <result column="targetid2" property="targetid2" />
+        <result column="triggercount" property="triggercount" />
+        <result column="targettype2" property="targettype2" />
+        <result column="targetid1_option" property="targetid1Option" />
+        <result column="targetid2_option" property="targetid2Option" />
+        <result column="fail_msg" property="failMsg" />
+        <result column="dialog_inform" property="dialogInform" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        triggerid, triggertype, targetid1, unionid, targettype, bid, id, msg, targetid2, triggercount, targettype2, targetid1_option, targetid2_option, fail_msg, dialog_inform
+    </sql>
+
+</mapper>

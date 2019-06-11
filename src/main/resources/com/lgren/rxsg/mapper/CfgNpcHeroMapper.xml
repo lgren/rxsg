@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.CfgNpcHeroMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.CfgNpcHero">
+        <id column="npcid" property="npcid" />
+        <result column="uid" property="uid" />
+        <result column="name" property="name" />
+        <result column="zi" property="zi" />
+        <result column="sex" property="sex" />
+        <result column="face" property="face" />
+        <result column="affairs_base" property="affairsBase" />
+        <result column="bravery_base" property="braveryBase" />
+        <result column="wisdom_base" property="wisdomBase" />
+        <result column="province" property="province" />
+        <result column="introduce" property="introduce" />
+        <result column="type" property="type" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        npcid, uid, name, zi, sex, face, affairs_base, bravery_base, wisdom_base, province, introduce, type
+    </sql>
+
+</mapper>

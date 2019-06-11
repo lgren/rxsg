@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.CfgCityTacticsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.CfgCityTactics">
+        <id column="stype" property="stype" />
+        <result column="deplunder_join" property="deplunderJoin" />
+        <result column="deplunder_action" property="deplunderAction" />
+        <result column="deplunder_target" property="deplunderTarget" />
+        <result column="depatrol_join" property="depatrolJoin" />
+        <result column="depatrol_action" property="depatrolAction" />
+        <result column="deinvade_join" property="deinvadeJoin" />
+        <result column="deinvade_action" property="deinvadeAction" />
+        <result column="deinvade_target" property="deinvadeTarget" />
+        <result column="deinvade_action2" property="deinvadeAction2" />
+        <result column="deinvade_target2" property="deinvadeTarget2" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        stype, deplunder_join, deplunder_action, deplunder_target, depatrol_join, depatrol_action, deinvade_join, deinvade_action, deinvade_target, deinvade_action2, deinvade_target2
+    </sql>
+
+</mapper>

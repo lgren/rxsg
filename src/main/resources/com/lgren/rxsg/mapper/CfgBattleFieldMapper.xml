@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.CfgBattleFieldMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.CfgBattleField">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="type" property="type" />
+        <result column="maxpeople" property="maxpeople" />
+        <result column="content" property="content" />
+        <result column="maxlevel" property="maxlevel" />
+        <result column="todo" property="todo" />
+        <result column="reward" property="reward" />
+        <result column="union_count" property="unionCount" />
+        <result column="state" property="state" />
+        <result column="maxtime" property="maxtime" />
+        <result column="minpeople" property="minpeople" />
+        <result column="maxcount" property="maxcount" />
+        <result column="maxdaycount" property="maxdaycount" />
+        <result column="user_unionid" property="userUnionid" />
+        <result column="openCondition" property="openCondition" />
+        <result column="demandGoods" property="demandGoods" />
+        <result column="demandThings" property="demandThings" />
+        <result column="demandNobility" property="demandNobility" />
+        <result column="openTime" property="openTime" />
+        <result column="joinDemand" property="joinDemand" />
+        <result column="battleTicket" property="battleTicket" />
+        <result column="winCondition" property="winCondition" />
+        <result column="loseCondition" property="loseCondition" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, type, maxpeople, content, maxlevel, todo, reward, union_count, state, maxtime, minpeople, maxcount, maxdaycount, user_unionid, openCondition, demandGoods, demandThings, demandNobility, openTime, joinDemand, battleTicket, winCondition, loseCondition
+    </sql>
+
+</mapper>

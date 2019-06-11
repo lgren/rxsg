@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.CfgGuideMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.CfgGuide">
+        <id column="gid" property="gid" />
+        <result column="group" property="group" />
+        <result column="pregid" property="pregid" />
+        <result column="name" property="name" />
+        <result column="content" property="content" />
+        <result column="triggertype" property="triggertype" />
+        <result column="triggerdetails" property="triggerdetails" />
+        <result column="showpos" property="showpos" />
+        <result column="distype" property="distype" />
+        <result column="disdetails" property="disdetails" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        gid, group, pregid, name, content, triggertype, triggerdetails, showpos, distype, disdetails
+    </sql>
+
+</mapper>

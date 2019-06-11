@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.SysCityHeroBaseAddMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.SysCityHeroBaseAdd">
+        <id column="id" property="id" />
+        <result column="hid" property="hid" />
+        <result column="uid" property="uid" />
+        <result column="command_base_add_on" property="commandBaseAddOn" />
+        <result column="affairs_base_add_on" property="affairsBaseAddOn" />
+        <result column="bravery_base_add_on" property="braveryBaseAddOn" />
+        <result column="wisdom_base_add_on" property="wisdomBaseAddOn" />
+        <result column="type" property="type" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, hid, uid, command_base_add_on, affairs_base_add_on, bravery_base_add_on, wisdom_base_add_on, type
+    </sql>
+
+</mapper>

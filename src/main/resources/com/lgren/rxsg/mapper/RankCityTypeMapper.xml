@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.RankCityTypeMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.RankCityType">
+        <id column="rank" property="rank" />
+        <result column="name" property="name" />
+        <result column="type" property="type" />
+        <result column="user" property="user" />
+        <result column="union" property="union" />
+        <result column="cid" property="cid" />
+        <result column="people" property="people" />
+        <result column="uid" property="uid" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        rank, name, type, user, union, cid, people, uid
+    </sql>
+
+</mapper>

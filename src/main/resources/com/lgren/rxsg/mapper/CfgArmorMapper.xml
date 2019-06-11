@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.CfgArmorMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.CfgArmor">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="part" property="part" />
+        <result column="type" property="type" />
+        <result column="attribute" property="attribute" />
+        <result column="hero_level" property="heroLevel" />
+        <result column="ori_hp_max" property="oriHpMax" />
+        <result column="value" property="value" />
+        <result column="image" property="image" />
+        <result column="inuse" property="inuse" />
+        <result column="box_drop" property="boxDrop" />
+        <result column="battle_drop" property="battleDrop" />
+        <result column="description" property="description" />
+        <result column="special" property="special" />
+        <result column="level" property="level" />
+        <result column="bid" property="bid" />
+        <result column="tieid" property="tieid" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, part, type, attribute, hero_level, ori_hp_max, value, image, inuse, box_drop, battle_drop, description, special, level, bid, tieid
+    </sql>
+
+</mapper>

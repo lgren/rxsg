@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.CfgSoldierMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.CfgSoldier">
+        <id column="sid" property="sid" />
+        <result column="type" property="type" />
+        <result column="fromcity" property="fromcity" />
+        <result column="name" property="name" />
+        <result column="description" property="description" />
+        <result column="hp" property="hp" />
+        <result column="ap" property="ap" />
+        <result column="dp" property="dp" />
+        <result column="range" property="range" />
+        <result column="speed" property="speed" />
+        <result column="carry" property="carry" />
+        <result column="time_need" property="timeNeed" />
+        <result column="wood_need" property="woodNeed" />
+        <result column="rock_need" property="rockNeed" />
+        <result column="iron_need" property="ironNeed" />
+        <result column="food_need" property="foodNeed" />
+        <result column="gold_need" property="goldNeed" />
+        <result column="people_need" property="peopleNeed" />
+        <result column="food_use" property="foodUse" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        sid, type, fromcity, name, description, hp, ap, dp, range, speed, carry, time_need, wood_need, rock_need, iron_need, food_need, gold_need, people_need, food_use
+    </sql>
+
+</mapper>

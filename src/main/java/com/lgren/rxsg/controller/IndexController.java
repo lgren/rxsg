@@ -1,0 +1,25 @@
+package com.lgren.rxsg.controller;
+
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+/**
+ * <p>
+ *  前端控制器
+ * </p>
+ *
+ * @author Lgren
+ * @since 2019-05-24
+ */
+@Controller
+@RequestMapping("/index")
+public class IndexController {
+    @GetMapping
+    public String index() {
+        return "index";
+    }
+}

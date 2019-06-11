@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.CfgHeroMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.CfgHero">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="npcid" property="npcid" />
+        <result column="sex" property="sex" />
+        <result column="face" property="face" />
+        <result column="cid" property="cid" />
+        <result column="level" property="level" />
+        <result column="exp" property="exp" />
+        <result column="affairs_add" property="affairsAdd" />
+        <result column="bravery_add" property="braveryAdd" />
+        <result column="wisdom_add" property="wisdomAdd" />
+        <result column="affairs_base" property="affairsBase" />
+        <result column="bravery_base" property="braveryBase" />
+        <result column="wisdom_base" property="wisdomBase" />
+        <result column="loyalty" property="loyalty" />
+        <result column="gold_need" property="goldNeed" />
+        <result column="herotype" property="herotype" />
+        <result column="command_base" property="commandBase" />
+        <result column="command_add_on" property="commandAddOn" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, npcid, sex, face, cid, level, exp, affairs_add, bravery_add, wisdom_add, affairs_base, bravery_base, wisdom_base, loyalty, gold_need, herotype, command_base, command_add_on
+    </sql>
+
+</mapper>

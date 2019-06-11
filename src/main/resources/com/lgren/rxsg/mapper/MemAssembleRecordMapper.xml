@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.MemAssembleRecordMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.MemAssembleRecord">
+        <id column="id" property="id" />
+        <result column="fromuid" property="fromuid" />
+        <result column="touid" property="touid" />
+        <result column="flag" property="flag" />
+        <result column="rewardid" property="rewardid" />
+        <result column="rewardcount" property="rewardcount" />
+        <result column="times" property="times" />
+        <result column="attackrank" property="attackrank" />
+        <result column="resistrank" property="resistrank" />
+        <result column="rKingLevel" property="rKingLevel" />
+        <result column="ischange" property="ischange" />
+        <result column="time" property="time" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, fromuid, touid, flag, rewardid, rewardcount, times, attackrank, resistrank, rKingLevel, ischange, time
+    </sql>
+
+</mapper>

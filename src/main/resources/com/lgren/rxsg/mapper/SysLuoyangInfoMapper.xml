@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.SysLuoyangInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.SysLuoyangInfo">
+        <result column="uid" property="uid" />
+        <result column="unionid" property="unionid" />
+        <result column="name" property="name" />
+        <result column="initname" property="initname" />
+        <result column="count" property="count" />
+        <result column="last_send_inform" property="lastSendInform" />
+        <result column="last_use_buffer" property="lastUseBuffer" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        uid, unionid, name, initname, count, last_send_inform, last_use_buffer
+    </sql>
+
+</mapper>

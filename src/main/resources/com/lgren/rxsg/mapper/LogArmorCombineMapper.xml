@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.LogArmorCombineMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.LogArmorCombine">
+        <id column="sid" property="sid" />
+        <result column="uid" property="uid" />
+        <result column="armorid" property="armorid" />
+        <result column="hp" property="hp" />
+        <result column="hp_max" property="hpMax" />
+        <result column="hid" property="hid" />
+        <result column="strong_level" property="strongLevel" />
+        <result column="strong_value" property="strongValue" />
+        <result column="embed_pearls" property="embedPearls" />
+        <result column="embed_holes" property="embedHoles" />
+        <result column="deified" property="deified" />
+        <result column="active_special" property="activeSpecial" />
+        <result column="strong_times" property="strongTimes" />
+        <result column="combine_level" property="combineLevel" />
+        <result column="usegoods" property="usegoods" />
+        <result column="success" property="success" />
+        <result column="mainsid" property="mainsid" />
+        <result column="time" property="time" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        sid, uid, armorid, hp, hp_max, hid, strong_level, strong_value, embed_pearls, embed_holes, deified, active_special, strong_times, combine_level, usegoods, success, mainsid, time
+    </sql>
+
+</mapper>

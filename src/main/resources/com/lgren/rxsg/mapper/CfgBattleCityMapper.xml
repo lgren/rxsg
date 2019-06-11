@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lgren.rxsg.mapper.CfgBattleCityMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lgren.rxsg.entity.CfgBattleCity">
+        <id column="bid" property="bid" />
+        <result column="xy" property="xy" />
+        <result column="nextxy" property="nextxy" />
+        <result column="drop" property="drop" />
+        <result column="unionid" property="unionid" />
+        <result column="rate" property="rate" />
+        <result column="name" property="name" />
+        <result column="image" property="image" />
+        <result column="winpoint" property="winpoint" />
+        <result column="losepoint" property="losepoint" />
+        <result column="position" property="position" />
+        <result column="reinforce_soldiers" property="reinforceSoldiers" />
+        <result column="can_quest" property="canQuest" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        bid, xy, nextxy, drop, unionid, rate, name, image, winpoint, losepoint, position, reinforce_soldiers, can_quest
+    </sql>
+
+</mapper>
