@@ -1,5 +1,6 @@
 package com.lgren.rxsg.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -7,16 +8,14 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lgren.rxsg.controller.common.CResult;
 import com.lgren.rxsg.entity.CfgArmor;
 import com.lgren.rxsg.entity.CfgTie;
+import com.lgren.rxsg.entity.constant.Constant;
 import com.lgren.rxsg.entity.dto.CfgArmorDTO;
 import com.lgren.rxsg.entity.dto.CommonDTO;
 import com.lgren.rxsg.entity.dto.TieDTO;
-import com.lgren.rxsg.entity.vo.TieAttrVO;
+import com.lgren.rxsg.entity.vo.TieVO;
 import com.lgren.rxsg.service.*;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.stereotype.Controller;
@@ -28,7 +27,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static java.util.Optional.ofNullable;
+import static com.lgren.rxsg.util.LgrenUtil.notBlank;
 
 /**
  * 装备管理
@@ -36,9 +35,9 @@ import static java.util.Optional.ofNullable;
  * @create 2019-05-24 11:39
  **/
 @Controller
-@RequestMapping("/equipment")
+@RequestMapping("/armor")
 @Slf4j
-public class EquipmentAction {
+public class ArmorAction {
     //region 装备
     @Autowired
     private ICfgArmorService cfgArmorService;
@@ -62,44 +61,34 @@ public class EquipmentAction {
     //region -------------------------------------装备-------------------------------------
 
     @ApiOperation(value="装备主界面")
-    @GetMapping("toEquipment")
-    public String toEquipment(Map<String, Object> map) {
+    @GetMapping("toArmor")
+    public String toArmor(Map<String, Object> map) {
         List<CfgTie> tieList = cfgTieService.list(new QueryWrapper<CfgTie>()
                 .orderByDesc("tieid"));// 所有套装
         map.put("tieList", tieList);
         map.put("attrList", cfgAttributeService.getAttrList(1));
-        return "equipment/equipment_div";
+        return "armor/armor_div";
     }
 
     @ApiOperation(value="分页查询装备")
     @GetMapping("armor")
     @ResponseBody
-    public CResult<IPage<CfgArmor>> getArmor(CfgArmorDTO cfgArmor, CommonDTO dto) {
-        IPage<CfgArmor> page = new Page<>(dto.getCurrent(), dto.getSize());
+    public CResult<IPage<CfgArmor>> getArmor(CommonDTO dto, CfgArmorDTO cfgArmor) {
+        IPage<CfgArmor> page = new Page<>(dto.getCurrent(), dto.getPageSize());
         LambdaQueryWrapper<CfgArmor> wrapper = new QueryWrapper<CfgArmor>().lambda();
         //region 筛选条件
         // 装备ID
-        ofNullable(cfgArmor.getId())
-                .ifPresent(o -> wrapper.eq(CfgArmor::getId, o));
+        notBlank(cfgArmor.getId()).ifPresent(o -> wrapper.eq(CfgArmor::getId, o));
+        // 套装ID
+        notBlank(cfgArmor.getTieid()).ifPresent(o -> wrapper.eq(CfgArmor::getTieid, o));
         // 装备名
-        ofNullable(cfgArmor.getName()).filter(StringUtils::isNotBlank)
-                .ifPresent(o -> wrapper.like(CfgArmor::getName, o));
+        notBlank(cfgArmor.getName()).ifPresent(o -> wrapper.like(CfgArmor::getName, o));
         // 装备部位
-        ofNullable(cfgArmor.getParts()).filter(StringUtils::isNotBlank)
-                .ifPresent(o -> wrapper.in(CfgArmor::getPart, cfgArmor.getPartArr()));
+        notBlank(cfgArmor.getParts()).ifPresent(o -> wrapper.in(CfgArmor::getPart, cfgArmor.getPartArr()));
         // 装备类型(橙色/蓝色等)
-        ofNullable(cfgArmor.getTypes()).filter(StringUtils::isNotBlank)
-                .ifPresent(o -> wrapper.eq(CfgArmor::getType, cfgArmor.getTypeArr()));
+        notBlank(cfgArmor.getTypes()).ifPresent(o -> wrapper.in(CfgArmor::getType, cfgArmor.getTypeArr()));
         //endregion
         return CResult.newSuccess(cfgArmorService.page(page, wrapper));
-    }
-
-    @ApiOperation(value="根据套装ID查询装备")
-    @GetMapping("getArmorByTieid")
-    @ResponseBody
-    public CResult<List<CfgArmor>> getArmorByTieid(Integer tieid) {
-        return CResult.newSuccess(cfgArmorService.list(new QueryWrapper<CfgArmor>().lambda()
-                .eq(CfgArmor::getTieid, tieid)));
     }
     //endregion
 
@@ -112,15 +101,16 @@ public class EquipmentAction {
         List<CfgTie> tieList = cfgTieService.list(new QueryWrapper<CfgTie>()
                 .orderByDesc("tieid"));// 所有套装
         map.put("tieList", tieList);
-        map.put("attrList", cfgAttributeService.getAttrList(1));
-        return "equipment/tie_div";
+        map.put("attrList", Constant.ARMOR_ATTR_MAP.get(1));
+        map.put("partMapStr", JSON.toJSONString(Constant.PART_MAP));
+        return "Armor/tie_div";
     }
 
     @ApiOperation(value="查看套装详细信息")
-    @GetMapping("tie")
+    @GetMapping("tie/{tieid}")
     @ResponseBody
-    public CResult<List<TieAttrVO>> tieInfo(Integer tieid) {
-        return CResult.newSuccess(cfgTieAttributeService.tieAttrVOList(tieid));
+    public CResult<TieVO> tieInfo(@PathVariable("tieid") Integer tieid) {
+        return CResult.newSuccess(cfgTieService.getTieVO(tieid));
     }
 
     @ApiOperation(value="新增/修改套装")
@@ -138,10 +128,10 @@ public class EquipmentAction {
     }
 
     @ApiOperation(value="删除套装")
-    @DeleteMapping("tie/{id}")
+    @DeleteMapping("tie/{tieid}")
     @ResponseBody
-    public CResult<Boolean> tieDelete(@PathVariable("id") Integer id) {
-        return cfgTieService.deleteTie(id);
+    public CResult<Boolean> tieDelete(@PathVariable("tieid") Integer tieid) {
+        return cfgTieService.deleteTie(tieid);
     }
     //endregion
 

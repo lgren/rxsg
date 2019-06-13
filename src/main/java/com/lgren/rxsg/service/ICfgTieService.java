@@ -4,6 +4,7 @@ import com.lgren.rxsg.controller.common.CResult;
 import com.lgren.rxsg.entity.CfgTie;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.lgren.rxsg.entity.dto.TieDTO;
+import com.lgren.rxsg.entity.vo.TieVO;
 
 /**
  * <p>
@@ -17,5 +18,7 @@ public interface ICfgTieService extends IService<CfgTie> {
 
     CResult<String> saveOrEditAll(TieDTO tieDTO);
 
-    CResult<Boolean> deleteTie(Integer id);
+    CResult<Boolean> deleteTie(Integer tieid);
+
+    TieVO getTieVO(Integer tieid);
 }

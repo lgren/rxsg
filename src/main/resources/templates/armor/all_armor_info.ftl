@@ -1,55 +1,8 @@
-<style type="text/css">
-    #tie_attr_list input {
-        width: 100%;
-        padding-left: 5px;
-    }
-</style>
-<div class="row clearfix">
-    <#-- 正文核心左-->
-    <div id="tie_all" class="col-md-6 column mb15">
-        <div style="overflow: auto; height: 498px;">
-            <div class="mb5">
-                <button id="add_tie" type="button" class="btn btn-primary">新增套装</button>
-            </div>
-            <table class="table table-hover table-bordered table-condensed table-striped">
-                <thead>
-                <tr>
-                    <th>套装名称</th>
-                    <th>套装件数</th>
-                    <th>套装id</th>
-                </tr>
-                </thead>
-                <tbody id="tie_list">
-                    <#list tieList as tie>
-                    <tr data-id="${tie.tieid}" data-name="${tie.name}" data-count="${tie.count}">
-                        <td width="50%">
-                            <button id="delete_tie" type="button" class="btn btn-danger btn-xs">删除</button>
-                            <span>${tie.name}</span>
-                        </td>
-                        <td width="25%">${tie.count}</td>
-                        <td width="25%">${tie.tieid}</td>
-                    </tr>
-                    </#list>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <#--正文核心右-->
-    <div id="tie_info" class="col-md-6 column mb15">
-        <h4>此处展示套装详细属性</h4>
-    </div>
-</div>
-<#--套装tr展示-->
-<script id="tieTrTemp" type="text/html">
-    <tr>
-        <td width="50%">套装名(单击此条修改)</td>
-        <td width="25%">套装件数(单击此条修改)</td>
-        <td width="25%"></td>
-    </tr>
-</script>
+<#-- 直接调用方法 getTieInfo(展示的地方, 展示的部分数据{tieAttrList, count, name, tieid}) -->
+<#macro tieInfo attrList>
 <#--套装详细属性-->
 <script id="tieAttrListTemp" type="text/html">
-    <form class="form-inline mt15" style="overflow: auto; height: 498px; margin: 0 !important;">
+    <form class="form_tie_info form-inline mt15" style="overflow: auto; max-height: 498px; margin: 0 !important;">
         <div class="mb5">
             <button id="add_tie_attr" type="button" class="btn btn-primary">新增属性</button>
         </div>
@@ -64,14 +17,14 @@
             </thead>
             <tbody id="tie_attr_list" data-tieid="{{tieid}}" data-name="{{name}}" data-count="{{count}}">
             {{each tieAttrList tieAttr}}
-                {{include 'tieAttrTrTemp' tieAttr}}
+            {{include 'tieAttrTrTemp' tieAttr}}
             {{/each}}
             </tbody>
         </table>
         <div class="mt15">
             <div class="form-group mr5">
                 <label for="tie_name">套装名称:</label>
-                <input id="tie_name" value="{{name}}" class="form-control ml5 w150p" type="text" />
+                <input id="tie_name" value="{{name}}" class="form-control ml5 w150p" type="text"/>
             </div>
             <div class="form-group mr5">
                 <label for="tie_count">套装件数:</label>
@@ -85,7 +38,7 @@
 <script id="tieAttrTrTemp" type="text/html">
     <tr class="tie_attr">
         <td width="30%">
-            <button id="remove_tie_attr" type="button" class="btn btn-danger btn-xs">移除</button>
+            <button type="button" class="remove_tie_attr btn btn-danger btn-xs">移除</button>
             <span class="tie_attr_name">{{tieName}}</span>
         </td>
         <td width="15%">
@@ -101,47 +54,20 @@
 </script>
 
 <script type="text/javascript">
+    // 成功保存后的回调方法 在 getTieInfo中定义 在 $body.on('click', '#save_tie', function (){...})中使用
+    function saveTieCallback(){}
+
     $(function () {
-        // 每套套装的详细内容
-        $('#tie_list').on('click', 'tr', function () {
-            getTieInfo(this);
-        });
-
-        $('#tie_all').on('click', '#add_tie', function () {
-            getTieInfo(null);
-        });
-
-        $('#tie_all').on('click', '#delete_tie', function () {
-            const $this = $(this);
-            layer.confirm('确认移除?', function () {
-                $.ajax({
-                    url: "equipment/tie/" + $this.closest('tr').data('id'),
-                    type: "DELETE",
-                    dataType: "json",
-                    success(result) {
-                        if (!result.success) layer.alert(result.msg);
-                        if (result.data) {
-                            $this.closest('tr').remove();
-                            layer.msg('删除成功');
-                        } else {
-                            layer.alert('删除失败');
-                        }
-                    },
-                    error(result) {console.log(result);}
-                });
-            });
-
-        });
-
-        $('#tie_info').on('click', '#add_tie_attr', function () {
+        const $body = $("body");
+        onOnly($body, 'click', '#add_tie_attr', function () {
             $('#tie_attr_list').append(template('tieAttrTrTemp', {tieName: $('#tie_name').val()}));
         });
 
-        $('#tie_info').on('click', '#remove_tie_attr', function () {
+        onOnly($body, 'click', '.remove_tie_attr', function () {
             $(this).closest('tr').remove();
         });
 
-        $('#tie_info').on('click', '#save_tie', function () {
+        onOnly($body, 'click', '#save_tie', function () {
             layer.confirm('确认保存?', function () {
                 if (!isOk) {
                     layer.msg('正在火速提交中~', {time: 2000});
@@ -154,7 +80,7 @@
                 }
                 isOk = false;
                 $.ajax({
-                    url: "/equipment/tie",
+                    url: "/armor/tie",
                     type: "POST",
                     // async: false,//使用同步的方式,true为异步方式
                     contentType: "application/json;charset=utf-8",
@@ -167,43 +93,49 @@
                             return;
                         }
                         layer.msg(result.data);
-                        toTie();
+                        saveTieCallback && saveTieCallback();
                     },
-                    error(result) {isOk = true;console.log(result);}
+                    error(result) {
+                        isOk = true;
+                        console.log(result);
+                    }
                 });
             });
         });
 
-        $('#tie_info').on('input', '#tie_name', function () {
+        onOnly($body, 'input', '#tie_name', function () {
             $('span.tie_attr_name').html(this.value);
         });
     });
 
-    function getTieInfo(e) {
-        const $this = $(e);
-        let tieid = $this.data("id");
+    function getTieInfo($showDiv, tieid, saveTieCallbackPar) {
+        saveTieCallback = saveTieCallbackPar;
         if (isEmpty(tieid)) {
-            $('#tie_info').html(template('tieAttrListTemp', {tieAttrList: [{}],}));
+            $showDiv.html(template('tieAttrListTemp', {tieAttrList: [{}],}));
         } else {
             $.ajax({
-                url: "/equipment/tie",
+                url: "/armor/tie/" + tieid,
                 type: "GET",
-                data: {tieid: tieid},
+                // data: {tieid: tempData.tieid},
                 dataType: "json",
                 success(result) {
                     if (!result.success) {
                         layer.msg(result.msg);
                         return;
                     }
-                    $('#tie_info').html(template('tieAttrListTemp', {
-                        tieid: tieid,
-                        name: $this.data("name"),
-                        count: $this.data("count"),
-                        tieAttrList: result.data !== null && result.data.length !==0 ? result.data : [{}],
+                    const tieVO = result.data;
+                    const tieAttrList = tieVO.tieAttrList;
+                    $showDiv.html(template('tieAttrListTemp', {
+                        tieid: tieVO.tieid,
+                        name: tieVO.name,
+                        count: tieVO.count,
+                        tieAttrList: $.isEmptyObject(tieAttrList) ? [{}] : tieAttrList,
                     }));
                     // $('.tie_attr_attid').selectpicker();
                 },
-                error(result) {console.log(result);}
+                error(result) {
+                    console.log(result);
+                }
             });
         }
     }
@@ -240,3 +172,60 @@
         return {success: true, data: tieDTO};
     }
 </script>
+</#macro>
+
+<#macro armorList>
+<script id="armorListTemp" type="text/html">
+    <table class="table table-bordered table-condensed table-striped">
+        <thead>
+        <tr>
+            <th>装备名称</th>
+            <th>部位</th>
+            <th>装备等级</th>
+            <th>装备ID</th>
+            <th>图片</th>
+        </tr>
+        </thead>
+        <tbody id="armor_list">
+            {{each armorList armor}}
+            <tr class="tie_attr">
+                <td width="35%">{{armor.name}}</td>
+                <td width="15%">{{partMap[armor.part]}}</td>
+                <td width="15%">{{armor.heroLevel}}</td>
+                <td width="25%">{{armor.id}}</td>
+                <td width="10%">
+                    <img alt="64x64" src="/images/armor/{{armor.image}}.png" class="img-thumbnail" />
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</script>
+
+<script type="text/javascript">
+    let partMap = ${partMapStr!"{}"};
+    function getArmorList($showDiv, tieid) {
+        $.ajax({
+            url: "/armor/armor",
+            type: "GET",
+            data: {tieid: tieid},
+            dataType: "json",
+            success(result) {
+                if (!result.success) {
+                    layer.msg(result.msg);
+                    return;
+                }
+                const armorList = result.data.records;
+                $showDiv.html(template('armorListTemp', {
+                    partMap: partMap,
+                    armorList: $.isEmptyObject(armorList) ? [{}] : armorList,
+                }));
+                // $('.tie_attr_attid').selectpicker();
+            },
+            error(result) {
+                console.log(result);
+            }
+        });
+    }
+</script>
+</#macro>

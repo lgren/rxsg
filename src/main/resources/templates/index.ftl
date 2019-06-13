@@ -6,6 +6,7 @@
     <title>主页</title>
     <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="/webjars/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet"/>
+    <#--<link href="/webjars/bootstrap-table/dist/bootstrap-table.min.css"/>-->
     <link href="/css/common.css?${version}" rel="stylesheet"/>
     <style type="text/css"></style>
 </head>
@@ -26,7 +27,7 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li class="active">
-                            <a href="javascript:" onclick="toTie()">装备</a>
+                            <a href="javascript:" onclick="toDivHtml($('#body_core'), '/armor/toTie')">装备</a>
                         </li>
                         <li>
                             <a href="javascript:">Link</a>
@@ -96,9 +97,9 @@
     <div class="row clearfix">
         <#--正文左侧导航-->
         <div class="col-xs-2 column">
-            <ul id="nav_equipment" class="nav nav-stacked nav-pills">
-                <li><a href="javascript:" data-to="toEquipment">装备</a></li>
-                <li><a href="javascript:" data-to="toTie">套装</a></li>
+            <ul id="nav_Armor" class="nav nav-stacked nav-pills">
+                <li><a href="javascript:" data-to='/armor/toArmor'>装备</a></li>
+                <li><a href="javascript:" data-to='/armor/toTie'>套装</a></li>
                 <li class="disabled"><a href="#">信息</a></li>
                 <#-- 下拉-->
                 <li class="dropdown pull-right">
@@ -124,6 +125,8 @@
 <script src="/webjars/bootstrap-paginator/build/bootstrap-paginator.min.js"></script>
 <script src="/webjars/bootstrap-select/js/bootstrap-select.min.js"></script>
 <script src="/webjars/bootstrap-select/js/i18n/defaults-zh_CN.js"></script>
+<#--<script src="/webjars/bootstrap-table/dist/bootstrap-table.min.js"></script>-->
+<#--<script src="/webjars/bootstrap-table/dist/locale/bootstrap-table-zh-CN.min.js"></script>-->
 <script src="/js/artTemplate.js"></script>
 <#--<script src="/js/layer.js"></script>-->
 <script src="/js/common.js?${version}"></script>
@@ -131,26 +134,16 @@
 <script type="text/javascript">
     let isOk = true;
     $(function(){
-        $('#nav_equipment>li').click(function () {
+        toDivHtml($('#body_core'), '/armor/toTie');
+        $('#nav_Armor>li').click(function () {
             const $this = $(this);
             $this.siblings().removeClass('active');
             $this.addClass('active');
         });
 
-        $('#nav_equipment>li>a').click(function () {
-            $.ajax({
-                url: "/equipment/" + $(this).data('to'),
-                type: "GET",
-                // dataType: "json",
-                success(result) {
-                    $('#body_core').html(result);
-                },
-                error(result) {
-                    console.log(result);
-                }
-            });
+        $('#nav_Armor>li>a').click(function () {
+            toDivHtml($('#body_core'), $(this).data('to'));
         });
-        toTie();
     });
 </script>
 </body>

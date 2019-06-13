@@ -58,6 +58,12 @@ spring:
         content:
           paths: /css/**,/js/**,/img/**
           enabled: false
+    static-locations:
+    - "classpath:/META-INF/resources/"
+    - "classpath:/resources/"
+    - "classpath:/static/"
+    - "classpath:/public/"
+    - "file:/Volumes/小眼神/APMServ5.2.6/www/htdocs/"
 mybatis-plus:
   mapper-locations: classpath*:com/lgren/rxsg/mapper/*.xml
   #实体扫描，多个package用逗号或者分号分隔

@@ -66,7 +66,7 @@ public class ${entity}Domain implements Serializable {
     <#if (logicDeleteFieldName!"") == field.name>
     @TableLogic
     </#if>
-    private ${field.propertyType} ${field.propertyName};
+    private <#if field.columnType.type=="LocalDateTime">java.sql.Date<#else>${field.propertyType}</#if> ${field.propertyName};
 </#list>
 <#------------  END 字段循环遍历  ---------->
 

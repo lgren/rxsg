@@ -5,13 +5,12 @@ import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.InjectionConfig;
 import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
+import com.baomidou.mybatisplus.generator.config.rules.DbColumnType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /** 代码生成器演示 */
 public class MpGenerator {
@@ -22,7 +21,6 @@ public class MpGenerator {
         String url = "jdbc:oracle:thin:@localhost:1521:XE";
         String username = "ta3cloud";
         String password = "ta3cloud";
-
         String outFilePath = "/src/main/java/com/lgren/ta3cloud/";
         String parent = "com.lgren";
         String modelName = "ta3cloud";
@@ -31,15 +29,18 @@ public class MpGenerator {
                 "VK02"};
         String[] excludeTable = null;
 
+        // String[] includeTable = {};
+        // String[] excludeTable = {"AA10", "UF05", "VC01", "VE90", "VE95", "VK01", "VK01V2",
+        //         "VK02"};
+
         boolean controller = false;
-        boolean service = false;
-        boolean serviceImpl = false;
-        boolean entity = false;
+        boolean service = true;
+        boolean serviceImpl = true;
+        boolean entity = true;
+        boolean mapper = true;
         String entitySuper = "com.yinhai.sysframework.app.domain.BaseDomain";
-        String serviceSuper = "com.yinhai.sysframework.service.Service";
+        String serviceSuper = "com.yinhai.project2.CommonService";
         String serviceImplSuper = "com.yinhai.sysframework.service.BaseService";
-        boolean mapper = false;
-        boolean xml = false;
         //endregion
 
         AutoGenerator mpg = new AutoGenerator();
@@ -90,10 +91,10 @@ public class MpGenerator {
         PackageConfig pc = new PackageConfig();
         pc.setParent(parent);
         pc.setModuleName(modelName);
+        pc.setEntity("domain");
         // pc.setController("controller");
         // pc.setService("service");
         // pc.setServiceImpl("service.impl");
-        // pc.setEntity("pojo");
         // pc.setMapper("dao");
         // pc.setXml("dao.xml");
         mpg.setPackageInfo(pc);
@@ -160,31 +161,49 @@ public class MpGenerator {
         // 自定义 xxList.jsp 生成
         List<FileOutConfig> focList = new ArrayList<>();
         // 调整 xml 生成目录演示
-        focList.add(new FileOutConfig("/templates/generator/mapper.xml.ftl") {
-            @Override
-            public String outputFile(TableInfo tableInfo) {
-                return projectPath + outFilePath + "sqlmap/" + tableInfo.getEntityName() + ".xml";
-            }
-        });
-        focList.add(new FileOutConfig("/templates/generator/entity.java.ftl") {
+        if (mapper) focList.add(new FileOutConfig("/generator/mapper.xml.ftl") {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 tableInfo.setConvert(false);
-                return projectPath + outFilePath + "entity/" + tableInfo.getEntityName() + "Domain.java";
+                return projectPath + "/" + outFilePath + "/" + "sqlmap/" + tableInfo.getEntityName() + ".xml";
             }
         });
-        focList.add(new FileOutConfig("/templates/generator/service.java.ftl") {
+        if (entity) focList.add(new FileOutConfig("/generator/entity.java.ftl") {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 tableInfo.setConvert(false);
-                return projectPath + outFilePath + "service/" + tableInfo.getEntityName() + "Service.java";
+                // tableInfo.getFields().forEach(f -> f.setColumnType(f.getColumnType() == DbColumnType.LOCAL_DATE_TIME
+                //         ? DbColumnType.DATE_SQL : f.getColumnType() == DbColumnType.BLOB
+                //         ? DbColumnType.BYTE_ARRAY
+                //         : f.getColumnType()));
+                // Set<String> importPackages = tableInfo.getImportPackages();
+                // Iterator<String> iterator = importPackages.iterator();
+                // String next;
+                // while (iterator.hasNext()) {
+                //     next = iterator.next();
+                //     if (Objects.equals(next, DbColumnType.LOCAL_DATE_TIME.getPkg())) {
+                //         importPackages.add(DbColumnType.DATE_SQL.getPkg());
+                //         iterator.remove();
+                //     } else if (Objects.equals(next, DbColumnType.LOCAL_DATE_TIME.getPkg())) {
+                //         iterator.remove();
+                //     }
+                //
+                // }
+                return projectPath + "/" + outFilePath + "/" + "domain/" + tableInfo.getEntityName() + "Domain.java";
             }
         });
-        focList.add(new FileOutConfig("/templates/generator/serviceImpl.java.ftl") {
+        if (service) focList.add(new FileOutConfig("/generator/service.java.ftl") {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 tableInfo.setConvert(false);
-                return projectPath + outFilePath + "service/impl/" + tableInfo.getEntityName() + "ServiceImpl.java";
+                return projectPath + "/" + outFilePath + "/" + "service/" + tableInfo.getEntityName() + "Service.java";
+            }
+        });
+        if (serviceImpl) focList.add(new FileOutConfig("/generator/serviceImpl.java.ftl") {
+            @Override
+            public String outputFile(TableInfo tableInfo) {
+                tableInfo.setConvert(false);
+                return projectPath + "/" + outFilePath + "/" + "service/impl/" + tableInfo.getEntityName() + "ServiceImpl.java";
             }
         });
         cfg.setFileOutConfigList(focList);
@@ -194,11 +213,16 @@ public class MpGenerator {
 
         // 关闭默认 xml 生成，调整生成 至 根目录
         TemplateConfig tc = new TemplateConfig();
-        if (!controller) tc.setController(null);
-        if (!service) tc.setService(null);
-        if (!serviceImpl) tc.setServiceImpl(null);
-        if (!entity) tc.setEntity(null);
-        if (!mapper) tc.setMapper(null);
+        // if (!controller) tc.setController(null);
+        // if (!service) tc.setService(null);
+        // if (!serviceImpl) tc.setServiceImpl(null);
+        // if (!entity) tc.setEntity(null);
+        // if (!mapper) tc.setMapper(null);
+        tc.setController(null);
+        tc.setService(null);
+        tc.setServiceImpl(null);
+        tc.setEntity(null);
+        tc.setMapper(null);
         tc.setXml(null);
         mpg.setTemplate(tc);
         //endregion

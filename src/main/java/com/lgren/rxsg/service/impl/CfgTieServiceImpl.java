@@ -7,6 +7,7 @@ import com.lgren.rxsg.controller.common.CResult;
 import com.lgren.rxsg.entity.CfgTie;
 import com.lgren.rxsg.entity.CfgTieAttribute;
 import com.lgren.rxsg.entity.dto.TieDTO;
+import com.lgren.rxsg.entity.vo.TieVO;
 import com.lgren.rxsg.mapper.CfgTieMapper;
 import com.lgren.rxsg.service.ICfgTieAttributeService;
 import com.lgren.rxsg.service.ICfgTieService;
@@ -18,7 +19,10 @@ import org.springframework.util.CollectionUtils;
 
 import javax.validation.constraints.Size;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
+
+import static java.util.Optional.ofNullable;
 
 /**
  * <p>
@@ -69,12 +73,10 @@ public class CfgTieServiceImpl extends ServiceImpl<CfgTieMapper, CfgTie> impleme
                     cfgTieAttributeService.save(o);
                 }
             });
-            tieAttrOldList.forEach(o -> {
-                // 删除
-                cfgTieAttributeService.remove(new QueryWrapper<CfgTieAttribute>().lambda()
-                        .eq(CfgTieAttribute::getTieid, o.getTieid())
-                        .eq(CfgTieAttribute::getPrecond, o.getPrecond()));
-            });
+            // 删除
+            tieAttrOldList.forEach(o -> cfgTieAttributeService.remove(new QueryWrapper<CfgTieAttribute>().lambda()
+                    .eq(CfgTieAttribute::getTieid, o.getTieid())
+                    .eq(CfgTieAttribute::getPrecond, o.getPrecond())));
             //endregion
         }
         //endregion
@@ -82,12 +84,20 @@ public class CfgTieServiceImpl extends ServiceImpl<CfgTieMapper, CfgTie> impleme
         return CResult.newSuccess("操作成功~");
     }
 
+
     @Override
-    public CResult<Boolean> deleteTie(Integer id) {
-        super.removeById(id);
+    public CResult<Boolean> deleteTie(Integer tieid) {
+        super.removeById(tieid);
         cfgTieAttributeService.remove(new QueryWrapper<CfgTieAttribute>().lambda()
-                .eq(CfgTieAttribute::getTieid, id));
+                .eq(CfgTieAttribute::getTieid, tieid));
         // super.removeById(id);
         return CResult.newSuccess(true);
+    }
+
+    @Override
+    public TieVO getTieVO(Integer tieid) {
+        return ofNullable(super.getById(tieid))
+                .map(t -> new TieVO(t).setTieAttrList(cfgTieAttributeService.tieAttrVOList(tieid)))
+                .orElseGet(TieVO::new);
     }
 }

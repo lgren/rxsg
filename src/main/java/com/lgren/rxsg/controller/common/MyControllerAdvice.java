@@ -1,7 +1,6 @@
 package com.lgren.rxsg.controller.common;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
@@ -20,5 +19,6 @@ public class MyControllerAdvice {
     public void addAttributes(Map<String, Object> map) {
         // map.put("contentPath", contentPath);
         map.put("version", System.currentTimeMillis());
+
     }
 }

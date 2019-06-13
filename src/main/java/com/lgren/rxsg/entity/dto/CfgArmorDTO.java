@@ -18,10 +18,10 @@ public class CfgArmorDTO extends CfgArmor {
     private String types;
 
     public Object[] getPartArr() {
-        return parts.split(",");
+        return parts == null ? null : parts.split(",");
     }
 
     public Object[] getTypeArr() {
-        return types.split(",");
+        return types == null ? null :  types.split(",");
     }
 }

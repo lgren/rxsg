@@ -10,7 +10,7 @@ import lombok.Data;
 @Data
 public class CommonDTO {
     private Integer current = 1;
-    private Integer size = 20;
+    private Integer pageSize = 20;
     private String id;
     private String keyword;
 //    private Integer pages;
